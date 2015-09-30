@@ -4,13 +4,13 @@
 
   <parent>
     <groupId>org.fcrepo</groupId>
-    <artifactId>fcrepo</artifactId>
+    <artifactId>fcrepo-parent</artifactId>
     <version>4.3.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>fcrepo-ontology</artifactId>
-  <name>${project.artifactId}</name>
-  <description>Fedora Ontology</description>
+  <artifactId>fcrepo-audit-ontology</artifactId>
+  <name>Fedora Audit Type Ontology</name>
+  <description>An ontology to model audit types for use with the Fedora repository framework</description>
   <packaging>pom</packaging>
 
   <build>
@@ -31,7 +31,7 @@
               <transformationSet>
                 <dir>.</dir>
                 <includes>
-                  <include>repository.rdf</include>
+                  <include>audit.rdf</include>
                 </includes>
                 <stylesheet>owl2html.xsl</stylesheet>
                 <outputDir>${project.build.directory}/html</outputDir>
@@ -42,41 +42,13 @@
                   </fileMapper>
                 </fileMappers>
               </transformationSet>
-              <transformationSet>
-                <dir>.</dir>
-                <includes>
-                  <include>indexing.rdf</include>
-                </includes>
-                <stylesheet>rdfs2html.xsl</stylesheet>
-                <outputDir>${project.build.directory}/html</outputDir>
-                <fileMappers>
-                  <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
-                    <pattern>\.rdf$</pattern>
-                    <replacement>/index.html</replacement>
-                  </fileMapper>
-                </fileMappers>
-              </transformationSet>
-              <transformationSet>
-                <dir>.</dir>
-                <includes>
-                  <include>index.xml</include>
-                </includes>
-                <stylesheet>index2html.xsl</stylesheet>
-                <outputDir>${project.build.directory}/html</outputDir>
-                <fileMappers>
-                  <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-                    <targetExtension>.html</targetExtension>
-                  </fileMapper>
-                </fileMappers>
-              </transformationSet>
-
             </transformationSets>
           </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
   </build>
-  
+
   <repositories>
     <repository>
       <id>snapshots-repo</id>
