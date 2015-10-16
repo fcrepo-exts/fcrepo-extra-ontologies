@@ -8,7 +8,7 @@
 
   <owl:Ontology rdf:about="http://fedora.info/definitions/v4/audit#">
     <rdfs:label xml:lang="en">Fedora Commons Repository - Audit Types</rdfs:label>
-    <owl:versionInfo>v4/2015/04/07</owl:versionInfo>
+    <owl:versionInfo>v4/2015/05/19</owl:versionInfo>
     <owl:priorVersion rdf:resource=""/>
   </owl:Ontology>
 
