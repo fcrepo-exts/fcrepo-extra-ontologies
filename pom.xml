@@ -27,13 +27,41 @@
             </execution>
           </executions>
           <configuration>
-            <transformationSets>
+           <transformationSets>
               <transformationSet>
                 <dir>.</dir>
                 <includes>
                   <include>audit.rdf</include>
                 </includes>
                 <stylesheet>owl2html.xsl</stylesheet>
+                <outputDir>${project.build.directory}/html</outputDir>
+                <fileMappers>
+                  <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+                    <pattern>\.rdf$</pattern>
+                    <replacement>/index.html</replacement>
+                  </fileMapper>
+                </fileMappers>
+              </transformationSet>
+              <transformationSet>
+                <dir>.</dir>
+                <includes>
+                  <include>objState.rdf</include>
+                </includes>
+                <stylesheet>owl2html.xsl</stylesheet>
+                <outputDir>${project.build.directory}/html</outputDir>
+                <fileMappers>
+                  <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+                    <pattern>\.rdf$</pattern>
+                    <replacement>/index.html</replacement>
+                  </fileMapper>
+                </fileMappers>
+             </transformationSet>
+             <transformationSet>
+                <dir>.</dir>
+                <includes>
+                  <include>indexing.rdf</include>
+                </includes>
+                <stylesheet>rdfs2html.xsl</stylesheet>
                 <outputDir>${project.build.directory}/html</outputDir>
                 <fileMappers>
                   <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
