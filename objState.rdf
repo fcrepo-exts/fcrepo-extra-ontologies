@@ -8,8 +8,8 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
-<rdf:RDF xmlns="http://fedora.info/definitions/1/0/access/ObjState"
-     xml:base="http://fedora.info/definitions/1/0/access/ObjState"
+<rdf:RDF xmlns="http://fedora.info/definitions/1/0/access/ObjState#"
+     xml:base="http://fedora.info/definitions/1/0/access/ObjState#"
      xmlns:fedora="http://fedora.info/definitions/v4/repository#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -22,34 +22,34 @@
       <owl:versionInfo>v5/2016/06/02</owl:versionInfo>
     </owl:Ontology>
 
-    <owl:ObjectProperty rdf:about="#objState">
+    <owl:ObjectProperty rdf:about="objState">
       <rdfs:label xml:lang="en">status</rdfs:label>
       <rdfs:comment xml:lang="en">Describes the state of a resource, such as active, inactive, or deleted.</rdfs:comment>
       <rdfs:domain rdf:resource="fedora:Resource"/>
-      <rdfs:range rdf:resource="#ResourceStatus"/>
+      <rdfs:range rdf:resource="ResourceStatus"/>
     </owl:ObjectProperty>
 
-    <owl:Class rdf:about="#ResourceStatus">
+    <owl:Class rdf:about="ResourceStatus">
       <rdfs:label xml:lang="en">resource state</rdfs:label>
-      <rdfs:comment xml:lang="en">Values of the state property. The out-of-the-box values are active, inactive, and deleted -- but additional values can be created.</rdfs:comment>
+      <rdfs:comment xml:lang="en">A value of the state property. Predefined values are active, inactive, and deleted, but additional values should be created as needed.</rdfs:comment>
     </owl:Class>
 
-    <owl:NamedIndividual rdf:about="#active">
+    <owl:NamedIndividual rdf:about="active">
       <rdfs:label xml:lang="en">active</rdfs:label>
       <rdfs:comment xml:lang="en">The resource is active.</rdfs:comment>
-      <rdf:type rdf:resource="#ResourceStatus"/>
+      <rdf:type rdf:resource="ResourceStatus"/>
     </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:about="#inactive">
+    <owl:NamedIndividual rdf:about="inactive">
       <rdfs:label xml:lang="en">inactive</rdfs:label>
       <rdfs:comment xml:lang="en">The resource is inactive.</rdfs:comment>
-      <rdf:type rdf:resource="#ResourceStatus"/>
+      <rdf:type rdf:resource="ResourceStatus"/>
     </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:about="#deleted">
+    <owl:NamedIndividual rdf:about="deleted">
       <rdfs:label xml:lang="en">deleted</rdfs:label>
-      <rdfs:comment xml:lang="en">The resource has been marked for deletion.</rdfs:comment>
-      <rdf:type rdf:resource="#ResourceStatus"/>
+      <rdfs:comment xml:lang="en">The resource has been marked as deleted.</rdfs:comment>
+      <rdf:type rdf:resource="ResourceStatus"/>
     </owl:NamedIndividual>
 
 </rdf:RDF>
